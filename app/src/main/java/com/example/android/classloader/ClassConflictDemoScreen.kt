@@ -8,6 +8,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dalvik.system.DexClassLoader
 import timber.log.Timber
@@ -57,4 +58,10 @@ fun getDexPath(context: Context, dexFileName: String): String {
     // 假设 dex 文件存放在外部文件目录下（需要实际准备文件和适当的权限处理）
     val downloadsDir = context.getExternalFilesDir(null)
     return File(downloadsDir, dexFileName).absolutePath
+}
+
+@Preview
+@Composable
+fun ClassConflictDemoScreenPreview(){
+    ClassConflictDemoScreen()
 }

@@ -4,9 +4,11 @@ package com.example.android.classloader
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import timber.log.Timber
 
@@ -64,3 +66,10 @@ fun getClassLoaderChain(clazz: Class<*>): List<String> {
     }
     return loaders
 }
+
+@Preview
+@Composable
+fun ClassLoaderVisualizationScreenPreview(){
+    ClassLoaderVisualizationScreen()
+}
+

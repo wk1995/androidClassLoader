@@ -4,10 +4,12 @@ package com.example.android.classloader
 import android.content.Context
 import android.widget.Toast
 import androidx.compose.foundation.layout.*
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dalvik.system.DexClassLoader
 import timber.log.Timber
@@ -63,4 +65,10 @@ fun loadClassFromDex(context: Context, dexPath: String, className: String): Clas
         Timber.e(e, "Error loading class from dex")
         return null
     }
+}
+
+@Preview
+@Composable
+fun DynamicLoadingScreenPreview() {
+    DynamicLoadingScreen()
 }
