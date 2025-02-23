@@ -1,0 +1,40 @@
+package com.example.android.classloader.custom
+
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+
+@Composable
+fun CustomClassloaderScreen() {
+    val viewmodel = CustomClassloaderScreenViewModel()
+    Row() {
+        Box(modifier = Modifier
+            .weight(1f)
+            .fillMaxHeight()
+            .clickable {
+                viewmodel.loadClassNormal(CustomClass::class.java)
+            }) {
+            Text("正常加载")
+        }
+        Box(modifier = Modifier
+            .weight(1f)
+            .fillMaxHeight()
+            .clickable {
+                viewmodel.loadClass(CustomClass::class.java)
+            }) {
+            Text("使用新加载器加载")
+        }
+
+    }
+}
+
+@Preview
+@Composable
+fun CustomClassloaderScreenPreview() {
+    CustomClassloaderScreen()
+}

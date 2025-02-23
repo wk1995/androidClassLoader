@@ -8,6 +8,7 @@ pluginManagement {
                 includeGroupByRegex("androidx.*")
             }
         }
+        mavenLocal()
         mavenCentral()
         gradlePluginPortal()
     }
@@ -17,10 +18,12 @@ dependencyResolutionManagement {
     repositories {
         maven ( url ="https://jitpack.io" )
         google()
+        mavenLocal()
         mavenCentral()
     }
 }
 
 rootProject.name = "androidClassLoader"
 include(":app")
- 
+//include(":demoClass")
+//include(":demoClass2")

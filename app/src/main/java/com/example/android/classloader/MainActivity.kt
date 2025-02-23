@@ -7,6 +7,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.*
+import com.example.android.classloader.custom.CustomClassloaderScreen
 import timber.log.Timber
 
 class MainActivity : ComponentActivity() {
@@ -30,6 +31,7 @@ fun AppNavHost() {
         composable("home") { HomeScreen(navController) }
         composable("visualization") { ClassLoaderVisualizationScreen() }
         composable("dynamic_loading") { DynamicLoadingScreen() }
+        composable("custom_classloader") { CustomClassloaderScreen() }
         composable("class_conflict") { ClassConflictDemoScreen() }
         composable("performance") { PerformanceAnalysisScreen() }
         composable("logs") { ExperimentLogScreen() }

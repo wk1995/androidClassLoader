@@ -22,6 +22,9 @@ fun HomeScreen(navController: NavController) {
         Button(onClick = { navController.navigate("dynamic_loading") }, modifier = Modifier.fillMaxWidth()) {
             Text(text = "动态加载与热替换实验")
         }
+        Button(onClick = { navController.navigate("custom_classloader") }, modifier = Modifier.fillMaxWidth()) {
+            Text(text = "自定义加载器")
+        }
         Spacer(modifier = Modifier.height(8.dp))
 
         Button(onClick = { navController.navigate("class_conflict") }, modifier = Modifier.fillMaxWidth()) {
