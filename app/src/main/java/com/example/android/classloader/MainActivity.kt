@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.*
 import com.example.android.classloader.custom.CustomClassloaderScreen
+import com.example.android.classloader.visualization.ClassLoaderVisualizationScreen
 import timber.log.Timber
 
 class MainActivity : ComponentActivity() {

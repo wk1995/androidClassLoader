@@ -1,4 +1,4 @@
-package com.example.android.classloader
+package com.example.android.classloader.visualization
 
 
 import androidx.compose.foundation.layout.*
