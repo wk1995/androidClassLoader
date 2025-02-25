@@ -17,14 +17,21 @@ class CustomClassloaderScreenViewModel {
 
     fun loadClass(cls: Class<CustomClass>) {
         printCurrentClassLoaders(cls)
-        val customClassloader = CustomClassloader(cls.classLoader)
-        val newCls = customClassloader.loadClass(cls.name)
-        val instance = newCls.getDeclaredConstructor().newInstance()
-        if (instance is CustomClass) {
-            Timber.tag(TAG).d("loadClassNormal instance getInt ${instance.getInt()}")
-        } else {
-            Timber.tag(TAG).d("loadClassNormal instance  $instance")
+        val systemClassLoader = ClassLoader.getSystemClassLoader()
+        Timber.tag(TAG).d("systemClassLoader $systemClassLoader")
+        val customClassloader = CustomClassloader(systemClassLoader)
+        try{
+            val newCls = customClassloader.loadClass(cls.name)//换成jdk内置类 String::class.java.name 就能找到
+            val instance = newCls.getDeclaredConstructor().newInstance()
+            if (instance is CustomClass) {
+                Timber.tag(TAG).d("loadClassNormal instance getInt ${instance.getInt()}")
+            } else {
+                Timber.tag(TAG).d("loadClassNormal instance  $instance")
+            }
+        }catch (e: Exception) {
+            Timber.tag(TAG).d("loadClassNormal exception $e")
         }
+
     }
 
     private fun printCurrentClassLoaders(cls: Class<CustomClass>) {
